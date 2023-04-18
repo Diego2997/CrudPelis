@@ -6,3 +6,6 @@ body{
 main{
     flex-grow: 1;
 }
+.ancho{
+    max-width: 150px;
+}
