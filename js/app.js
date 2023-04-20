@@ -14,6 +14,8 @@ function cambiarTema(color) {
   console.log(color);
   //data-bs-theme = 'light/dark'
   document.querySelector("html").setAttribute("data-bs-theme", color);
+  localStorage.setItem("prueba",JSON.stringify(color))
+  
   //guardar en Localstorage
-  localStorage.setItem('tema', JSON.stringify(color));
+  localStorage.setItem("tema",color)
 }
