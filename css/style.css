@@ -9,3 +9,11 @@ main{
 .ancho{
     max-width: 150px;
 }
+img{
+    object-fit: cover;
+    max-height: 340px;
+    width: auto;
+}
+.detalle{
+    height: 100%;
+}
