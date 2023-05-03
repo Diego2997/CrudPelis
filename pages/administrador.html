@@ -1,375 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- agregar etiquetas meta -->
-    <title>Peliculas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- agregar etiquetas meta -->
+  <title>Peliculas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
-              <a class="navbar-brand" href="#">Gratix TV</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="administrador.html">Administrador</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <span class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-moon-stars-fill"></i>
-                    </span>
-                    <ul class="dropdown-menu">
-                      <li><button class="dropdown-item" id="btnThemeLight"><i class="bi bi-brightness-high-fill"></i> Light</button></li>
-                      <li><button class="dropdown-item" id="btnThemeDark"><i class="bi bi-moon-stars-fill"></i> Dark</button></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link">Logout</a>
-                  </li>
-                </ul>
-              </div>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Gratix TV</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="administrador.html">Administrador</a>
+            </li>
+            <li class="nav-item dropdown">
+              <span class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-moon-stars-fill"></i>
+              </span>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" id="btnThemeLight"><i class="bi bi-brightness-high-fill"></i>
+                    Light</button></li>
+                <li><button class="dropdown-item" id="btnThemeDark"><i class="bi bi-moon-stars-fill"></i> Dark</button>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="container">
+      <h3 class="display-3 text-center">Administrador de películas</h3>
+      <hr />
+      <p class="mt-1">
+        Opciones:
+        <button type="button" class="btn btn-outline-primary mx-2" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          <i class="bi bi-clipboard-plus-fill"></i>
+        </button>
+      </p>
+      <h4 class="display-4">Lista de Pelis</h4>
+      <hr />
+      <article class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Título</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Género</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </article>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Administrar serie
+              </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </nav>
-    </header>
-    <main>
-        <section class="container">
-          <h3 class="display-3 text-center">Administrador de películas</h3>
-          <hr />
-          <p class="mt-1">
-            Opciones:
-            <button
-              type="button"
-              class="btn btn-outline-primary mx-2"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              <i class="bi bi-clipboard-plus-fill"></i>
-            </button>
-          </p>
-          <h4 class="display-4">Lista de Pelis</h4>
-          <hr />
-          <article class="table-responsive">
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Título</th>
-                  <th scope="col">Descripción</th>
-                  <th scope="col">Imagen</th>
-                  <th scope="col">Género</th>
-                  <th scope="col">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>The Super Mario Bros. Movie</td>
-                  <td class="text-truncate ancho pe-5">
-                    Adaptación de la serie de videojuegos de Nintendo. La película
-                    cuenta la historia de Mario y Luigi, dos hermanos que viajan a
-                    un mundo oculto para rescatar a la Princesa Peach, capturada
-                    por el malvado Rey Bowser. Las cosas, sin embargo no serán
-                    sencillas. Mario y Luigi tendrán que enfrentarse a un ejército
-                    de setas animadas antes de luchar contra su oponente. Rutas de
-                    ladrillos y castillos con múltiples peligros serán algunos de
-                    los obstáculos que los hermanos tendrán que superar para
-                    conseguir su objetivo.
-                  </td>
-                  <td class="text-truncate ancho pe-5">
-                    https://www.sensacine.com/peliculas/pelicula-234099/
-                  </td>
-                  <td>Aventura</td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-warning mx-1"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      <i class="bi bi-pencil-square"></i></button
-                    ><button type="button" class="btn btn-danger mx-1">
-                      <i class="bi bi-x-square"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Ant-Man and The Wasp: Quantumania</td>
-                  <td class="text-truncate ancho pe-5">
-                    Scott Lang (Paul Rudd) está disfrutando de su vida como
-                    Vengador y de la fama que ha ganado por ayudar a salvar a la
-                    humanidad en Vengadores: Endgame. Todo el mundo le quiere y le
-                    adora. Incluso ha publicado un libro. No obstante,eso cambia
-                    cuando los secretos familiares empiezan a salir a la luz. Por
-                    culpa de una experimento, Scott Lang, su hija Cassie Lang
-                    (Kathryn Newton), su pareja Hope van Dyne (Evangeline Lilly),
-                    sus suegos Hank Pym (Michael Douglas) y Janet van Dyne
-                    (Michelle Pfeiffer) son arrastrados al Reino Cuántico. Allí,
-                    en esta dimensión del multiverso, se encontrarán con Kang el
-                    Conquistador (Jonathan Majors), el gran villano de la nueva
-                    era del Universo Cinematográfico de Marvel. Ant-Man y la
-                    Avispa: Quantumanía es la película encargada de dar el
-                    pistoletazo de salida a la Fase 5 de la franquicia.
-                  </td>
-                  <td class="text-truncate ancho pe-5">
-                    https://www.sensacine.com/peliculas/pelicula-261724/
-                  </td>
-                  <td>Acción</td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-warning mx-1"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      <i class="bi bi-pencil-square"></i></button
-                    ><button type="button" class="btn btn-danger mx-1">
-                      <i class="bi bi-x-square"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>AIR</td>
-                  <td class="text-truncate ancho pe-5">
-                    La película Air (Ben Affleck) está basada en la increíble y
-                    real historia del jefe de la marca de zapatillas y deporte
-                    Nike, Sonny Vaccaro (Matt Damon), y el fundador de Nike, Phil
-                    Knight (Ben Affleck). Ambos están intentando que la marca se
-                    convierta en una de las más famosas de la historia, por ello,
-                    intentan conseguir que la leyenda del baloncesto Michael
-                    Jordan patrocine sus productos en la década de 1980. La cinta
-                    sigue los incansables esfuerzos de los dos integrantes de Nike
-                    para conseguir sus sueños.
-                  </td>
-                  <td class="text-truncate ancho pe-5">
-                    https://www.sensacine.com/peliculas/pelicula-303794/
-                  </td>
-                  <td>Acción</td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-warning mx-1"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      <i class="bi bi-pencil-square"></i></button
-                    ><button type="button" class="btn btn-danger mx-1">
-                      <i class="bi bi-x-square"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Empieza el baile</td>
-                  <td class="text-truncate ancho pe-5">
-                    Carlos y Margarita hicieron grandes cosas juntos, ya que
-                    fueron durante varios años, una de las parejas de tango más
-                    conocidas y famosas de su época. Sin embargo, a día de hoy, no
-                    queda nada de esos maravillosos años. Carlos vive una segunda
-                    vida en la ciudad de Madrid, mientras que Margarita sigue
-                    residiendo en Buenos Aires donde vive sumergida en la más
-                    profunda pobreza y ha sido olvidada por sus amigos y
-                    compañeros, pero todo esto lo sobrelleva con una gran dosis de
-                    humor. Ahora, junto a su inseparable amigo Pichiquito, la
-                    pareja de baile comienza un viaje hacia la cordillera de los
-                    Andes en busca de respuestas mientras se enfrentan a su
-                    pasado.
-                  </td>
-                  <td class="text-truncate ancho pe-5">
-                    https://www.sensacine.com/peliculas/pelicula-313579/
-                  </td>
-                  <td>Comedia</td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-warning mx-1"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      <i class="bi bi-pencil-square"></i></button
-                    ><button type="button" class="btn btn-danger mx-1">
-                      <i class="bi bi-x-square"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </article>
-          <!-- Modal -->
-          <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Administrar serie
-                  </h1>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+            <div class="modal-body">
+              <form id="formPelicula">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="codigo" class="form-label">Código</label>
+                    <input type="number" class="form-control" aria-label="codigo" id="codigo" min="1" max="500" />
+                  </div>
+                  <div class="col-12">
+                    <label for="titulo" class="form-label">Título *</label>
+                    <input type="text" class="form-control" placeholder="Ej: Spiderman" aria-label="titulo" id="titulo"
+                      maxlength="30" minlength="3" />
+                  </div>
+                  <div class="col-12">
+                    <label for="descripcion" class="form-label">Descripción *</label>
+                    <input type="text" class="form-control" placeholder="Ej: Érase una vez en una ciudad..."
+                      aria-label="descripcion" id="descripcion" maxlength="1000" minlength="3"/>
+                  </div>
+                  <div class="col-12">
+                    <label for="director" class="form-label">Director </label>
+                    <input type="text" class="form-control" placeholder="Ej: Érase una vez en una ciudad..."
+                      aria-label="director" id="director" maxlength="1000" minlength="3" />
+                  </div>
+                  <div class="col-12">
+                    <label for="imagen" class="form-label">Imágen *</label>
+                    <input type="text" class="form-control"
+                      placeholder="https://es.web.img3.acsta.net/c_310_420/pictures/23/02/20/17/29/1574086.jpg"
+                      aria-label="imagen" id="imagen" maxlength="300" minlength="3"  />
+                  </div>
+                  <div class="col-12">
+                    <label for="genero" class="form-label">Género *</label>
+                    <select class="form-select" aria-label="Genero de pelicula" id="genero">
+                      <option selected value="">Seleccione una opción</option>
+                      <option value="Accion">Acción</option>
+                      <option value="Aventura">Aventura</option>
+                      <option value="Comedia">Comedia</option>
+                      <option value="Terror">Terror</option>
+                      <option value="Drama">Drama</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="anio" class="form-label">Año</label>
+                    <input type="number" class="form-control" aria-label="anio" placeholder="Ej: 2023" id="anio" min="1"
+                      max="10000" />
+                  </div>
+                  <div class="col-12">
+                    <label for="duracion" class="form-label">Duración</label>
+                    <input type="number" class="form-control" aria-label="duracion" placeholder="Ej: 90 min"
+                      id="duracion" min="1" max="500" />
+                  </div>
+                  <div class="col-12">
+                    <label for="pais" class="form-label">País</label>
+                    <input type="text" class="form-control" aria-label="pais" placeholder="Ej: Argentina" id="pais"
+                      minlength="3" maxlength="40"  />
+                  </div>
+                  <div class="col-12">
+                    <label for="reparto" class="form-label">Reparto</label>
+                    <input type="text" class="form-control" aria-label="reparto"
+                      placeholder="Ej: Ben Affleck, Matt Damon, Jason Bateman, Viola Davis" id="reparto" minlength="5"
+                      maxlength="1000" />
+                  </div>
+                  <div class="alert alert-danger d-none" role="alert" id="alertMsjError">
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Enviar
+                  </button>
+
                 </div>
-                <div class="modal-body">
-                  <form id="formPelicula">
-                    <div class="row g-3">
-                      <div class="col-12">
-                        <label for="codigo" class="form-label">Código</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          aria-label="codigo"
-                          id="codigo"
-                          min="1"
-                          max="500"
-                          required
-                        />
-                      </div>
-                      <div class="col-12">
-                        <label for="titulo" class="form-label">Título *</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Ej: Spiderman"
-                          aria-label="titulo"
-                          id="titulo"
-                          maxlength="30"
-                          minlength="3"
-                          required
-                        />
-                      </div>
-                      <div class="col-12">
-                        <label for="descripcion" class="form-label"
-                          >Descripción *</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Ej: Érase una vez en una ciudad..."
-                          aria-label="descripcion"
-                          id="descripcion"
-                          maxlength="1000"
-                          minlength="3"
-                          required
-                        />
-                      </div>
-                      <div class="col-12">
-                        <label for="imagen" class="form-label">Imágen *</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="https://es.web.img3.acsta.net/c_310_420/pictures/23/02/20/17/29/1574086.jpg"
-                          aria-label="imagen"
-                          id="imagen"
-                          maxlength="300"
-                          minlength="3"
-                          required
-                        />
-                      </div>
-                      <div class="col-12">
-                        <label for="genero" class="form-label">Género *</label>
-                        <select
-                          class="form-select"
-                          aria-label="Genero de pelicula"
-                        >
-                          <option selected>Seleccione una opción</option>
-                          <option value="1">Acción</option>
-                          <option value="2">Aventura</option>
-                          <option value="3">Comedia</option>
-                          <option value="4">Terror</option>
-                          <option value="5">Drama</option>
-                        </select>
-                      </div>
-                      <div class="col-12">
-                        <label for="anio" class="form-label">Año</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          aria-label="anio"
-                          placeholder="Ej: 2023"
-                          id="anio"
-                          min="1"
-                          max="10000"
-                          required
-                        />
-                      </div>
-                      <div class="col-12">
-                        <label for="duracion" class="form-label">Duración</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          aria-label="duracion"
-                          placeholder="Ej: 90 min"
-                          id="duracion"
-                          min="1"
-                          max="500"
-                          required
-                        />
-                      </div>
-                      <div class="col-12">
-                        <label for="pais" class="form-label">País</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          aria-label="pais"
-                          placeholder="Ej: Argentina"
-                          id="pais"
-                          minlength="3"
-                          maxlength="40"
-                          required
-                        />
-                      </div>
-                      <div class="col-12">
-                        <label for="reparto" class="form-label">Reparto</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          aria-label="reparto"
-                          placeholder="Ej: Ben Affleck, Matt Damon, Jason Bateman, Viola Davis"
-                          id="reparto"
-                          minlength="5"
-                          maxlength="1000"
-                          required
-                        />
-                      </div>
-                      <aside>
-                        <button type="submit" class="btn btn-primary">
-                          Enviar
-                        </button>
-                      </aside>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
-        </section>
-      </main>
-    <footer class="bg-dark text-light text-center py-4">
-        <p>&copy; Todos los derechos reservados</p>
-    </footer>
-    <script src="../js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
-    <script src="../js/administrador.js" type="module"></script>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-dark text-light text-center py-4">
+    <p>&copy; Todos los derechos reservados</p>
+  </footer>
+  <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+<script src="../js/app.js"></script>
+  <script src="../js/administrador.js" type="module"></script>
 </body>
+
 </html>

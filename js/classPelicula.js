@@ -104,4 +104,19 @@ export default class Pelicula {
     set reparto(reparto) {
       this.#reparto = reparto;
     }
+
+    toJSON(){
+      return {
+          codigo: this.codigo,
+          titulo: this.titulo,
+          genero: this.genero,
+          descripcion: this.descripcion,
+          anio: this.anio,
+          pais: this.pais,
+          duracion: this.duracion,
+          reparto: this.reparto,
+          director: this.director,
+          imagen: this.imagen
+      }
+  }
   }
