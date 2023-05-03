@@ -26,6 +26,7 @@ if (!listaPeliculas) {
   listaPeliculas = JSON.parse(listaPeliculas).map(
     (pelicula) =>
       new Pelicula(
+        pelicula.codigo,
         pelicula.titulo,
         pelicula.descripcion,
         pelicula.director,
@@ -70,12 +71,14 @@ function crearFila(pelicula,indice) {
   <td>
     <button type="button" class="btn btn-warning mx-1" data-bs-toggle="modal"
       data-bs-target="#exampleModal">
-      <i class="bi bi-pencil-square"></i></button><button type="button" class="btn btn-danger mx-1">
+      <i class="bi bi-pencil-square"></i></button>
+      <button type="button" class="btn btn-danger" mx-1 onclick="borrarPelicula('${pelicula.codigo}')">
       <i class="bi bi-x-square"></i>
     </button>
   </td>
 </tr>`
 }
+
 
 function prepararFormulario(e) {
   e.preventDefault();
@@ -90,6 +93,7 @@ function crearPelicula() {
     //creo la peli
     mostrarAlert(false,'');
     let nuevaPeli = new Pelicula(
+      undefined,
       titulo.value,
       descripcion.value,
       director.value,
@@ -103,6 +107,7 @@ function crearPelicula() {
     console.log(nuevaPeli);
     //guardar la peli en el array
     listaPeliculas.push(nuevaPeli);
+
     console.log(listaPeliculas);
     //guardar el array en localstorage
     localStorage.setItem("listaPeliculas", JSON.stringify(listaPeliculas));
@@ -136,4 +141,38 @@ function mostrarAlert(estado, resumeErrores){
 
 function limpiarFormulario(){
   formularioPelicula.reset();
+}
+function guardarEnLocalStorage() {//Sirve para guardar o actualizar
+  localStorage.setItem("listaPeliculas",JSON.stringify(listaPeliculas))
+}
+
+window.borrarPelicula=(codigo)=> {
+  Swal.fire({
+    title: 'Esta seguro de eliminar la pelicula?',
+    text: "No puedes revertir posteriormente este paso!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Borrar',
+    cancelButtonText:'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+  //borrar del array un objeto
+  let posicionPeli = listaPeliculas.findIndex(pelicula => pelicula.codigo === codigo)
+  console.log(posicionPeli)
+  listaPeliculas.splice(posicionPeli,1);
+  //actualizar localStorage
+  guardarEnLocalStorage()
+//borrar la fila de la tabla
+let tablaPelicula = document.querySelector("tbody")
+tablaPelicula.removeChild(tablaPelicula.children[posicionPeli]);
+
+      Swal.fire(
+        'Pelicula eliminada!',
+        'La Pelicula seleccionada fue eliminada correctamente',
+        'success'
+      )
+    }
+  })
 }
