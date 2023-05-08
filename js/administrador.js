@@ -13,7 +13,9 @@ let codigo = document.getElementById("codigo"),
   anio = document.getElementById("anio"),
   duracion = document.getElementById("duracion"),
   reparto = document.getElementById("reparto");
-
+  
+let modalPelicula = new bootstrap.Modal(document.getElementById('modalAdministrarPelicula'));
+  console.log(modalPelicula)
 //si quiero trabajar con una array de objetos normales
 // let listaPeliculas =  JSON.parse(localStorage.getItem('listaPeliculas')) || [];
 
@@ -69,8 +71,11 @@ function crearFila(pelicula,indice) {
   </td>
   <td>${pelicula.genero}</td>
   <td>
-    <button type="button" class="btn btn-warning mx-1" data-bs-toggle="modal"
-      data-bs-target="#exampleModal">
+    <button
+     type="button"
+      class="btn btn-warning mx-1"
+      onclick="prepararPelicula('${pelicula.codigo}')"
+      >
       <i class="bi bi-pencil-square"></i></button>
       <button type="button" class="btn btn-danger" mx-1 onclick="borrarPelicula('${pelicula.codigo}')">
       <i class="bi bi-x-square"></i>
@@ -175,4 +180,10 @@ tablaPelicula.removeChild(tablaPelicula.children[posicionPeli]);
       )
     }
   })
+}
+
+window.prepararPelicula= (codigo) =>{
+  console.log(codigo)
+  //mostrar la ventana modal con los datos de la pelicula
+   modalPelicula.show()
 }
